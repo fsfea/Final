@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import java.util.logging.LogRecord;
 
-public class SplashScreen extends AppCompatActivity
+public class Splash_Screen extends AppCompatActivity
 {
 
     @Override
@@ -28,7 +28,7 @@ public class SplashScreen extends AppCompatActivity
             public void run()
             {
                 //to open new activity from current to next activity
-                Intent i= new Intent(SplashScreen.this,  Sign_IN.class);
+                Intent i= new Intent(Splash_Screen.this,  Sign_IN.class);
                 startActivity(i);
                 //to close current activity
                 finish();
