@@ -11,11 +11,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private editTExt
-    private TextInputLayout etText ;
-    private TextInputLayout
-    private TextInputLayout
-    private TextInputLayout
+
+
 
 
 
