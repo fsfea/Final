@@ -8,18 +8,20 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 import java.util.logging.LogRecord;
 
 public class Splash_Screen extends AppCompatActivity
 {
-
+private TextInputLayout et;
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //456456456465
         setContentView(R.layout.activity_splash_screen);
-
+        et=findViewById(R.id.et);
 
         //start next activity (screen) automatically after period of time
         android.os.Handler h=new Handler();

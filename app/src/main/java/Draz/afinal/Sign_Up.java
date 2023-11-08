@@ -25,7 +25,6 @@ public class Sign_Up extends AppCompatActivity
         etE_mail = findViewById(R.id.etE_mail) ;
         etpassword = findViewById(R.id.etpassword) ;
         et_repassword=findViewById(R.id.et_repassword);
-
         etphone = findViewById(R.id. etphone) ;
         btnSave= findViewById(R.id.btnSave) ;
         BTNCancel= findViewById(R.id.BTNCancel) ;

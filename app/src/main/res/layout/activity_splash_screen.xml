@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Final"
+    android:background="@drawable/bg1"
     tools:context=".Splash_Screen">
 
     <TextView
-        android:id="@+id/Et_Text"
+        android:id="@+id/et"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:gravity="center"
