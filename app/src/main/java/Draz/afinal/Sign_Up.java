@@ -2,18 +2,21 @@ package Draz.afinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class Sign_Up extends AppCompatActivity
 {
-    private TextInputLayout etname;
-    private TextInputLayout etE_mail ;
-    private TextInputLayout etpassword ;
-    private TextInputLayout et_repassword;
-    private TextInputLayout etphone;
+    private TextInputEditText etname;
+    private TextInputEditText etE_mail ;
+    private TextInputEditText etpassword ;
+    private TextInputEditText et_repassword;
+    private TextInputEditText etphone;
     private Button btnSave ;
     private Button BTNCancel ;
 
@@ -28,5 +31,9 @@ public class Sign_Up extends AppCompatActivity
         etphone = findViewById(R.id. etphone) ;
         btnSave= findViewById(R.id.btnSave) ;
         BTNCancel= findViewById(R.id.BTNCancel) ;
+    }
+    public void onClickGo (View v)
+    {
+        Intent i = new Intent( Sign_Up.this,Sign_IN.class );
     }
 }
