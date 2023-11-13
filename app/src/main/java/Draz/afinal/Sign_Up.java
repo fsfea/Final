@@ -32,8 +32,9 @@ public class Sign_Up extends AppCompatActivity
         btnSave= findViewById(R.id.btnSave) ;
         BTNCancel= findViewById(R.id.BTNCancel) ;
     }
-    public void onClickGo (View v)
+    public void onClickCancel (View v)
     {
-        Intent i = new Intent( Sign_Up.this,Sign_IN.class );
+
+        finish();
     }
 }
