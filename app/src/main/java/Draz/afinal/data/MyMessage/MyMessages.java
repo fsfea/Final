@@ -10,12 +10,13 @@ public class MyMessages {
     public String title;
     public String Text;
     public String contact_name;
-    public int contact_phone;
-    public int y;
-    public int month;
-    public int d;
-    public double h;
-    public double m;
+    public int contact_phone;//رقم الهاتف
+    public int y;//السنة
+    public int month;//الشهر
+    public int d;//اليوم
+    public double h;//الساعات
+    public double m;//الدقائق
+    public boolean isCompleted;//هل تمت المهمة
 
     @Override
     public String toString() {
@@ -30,6 +31,7 @@ public class MyMessages {
                 ", d=" + d +
                 ", h=" + h +
                 ", m=" + m +
+                ", isCompleted=" + isCompleted +
                 '}';
     }
 }
