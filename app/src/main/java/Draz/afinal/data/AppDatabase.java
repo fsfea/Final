@@ -6,8 +6,8 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
 import Draz.afinal.data.MyMessage.MyMessages;
+import Draz.afinal.data.MyMessage.MyMessagesQuery;
 import Draz.afinal.data.usersTable.MyUser;
 import Draz.afinal.data.usersTable.MyuserQuery;
 
@@ -47,14 +47,9 @@ public abstract class AppDatabase extends RoomDatabase
          */
 
 
-        public abstract MySubjectQuery getMySubjectQuery();
 
-        /**
-         *  يعيد كائن لعمليات جدول المهمات
-         * @return
-         */
 
-        public abstract MyTasksQuery getMyTaskQuery();
+        public abstract MyMessagesQuery getMyMessage();
 
         /**
          * بناء قاعدة البيانات واعادة كائن يؤشر عليها
