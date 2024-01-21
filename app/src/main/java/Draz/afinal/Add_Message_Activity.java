@@ -2,43 +2,42 @@ package Draz.afinal;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.List;
-
+import com.google.android.material.textfield.TextInputLayout;
 
 
 public class Add_Message_Activity extends AppCompatActivity {
-    private Button btnUpdate;
+    private Button btnSave;
     private Button BTNCancel;
     private SeekBar skbrImportance;
-    private TextView tvImpoertance;
-    private TextInputEditText etShortTitle;
-    private TextInputEditText etText;
-    private TextView textView;
-    private AutoCompleteTextView autoEtSubj;
+    private TextInputLayout etTitle;
+    private TextInputLayout etShortTitle;
+    private TextInputLayout etText;
+    private TextInputLayout etContact_name ;
+    private TextInputLayout et_Contactphone ;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_message);
-        btnUpdate = findViewById(R.id.btnUpdate);
+        btnSave = findViewById(R.id.btnSave);
         BTNCancel = findViewById(R.id.BTNCancel);
         skbrImportance = findViewById(R.id.skbrImportance);
-        tvImpoertance = findViewById(R.id.tvImpoertance);
-        etShortTitle = findViewById(R.id.etShortTitle);
-        etText = findViewById(R.id.etPassword);
-        autoEtSubj = findViewById(R.id.autoEtSubj);
+        etTitle = findViewById(R.id.etTitle);
+        etContact_name = findViewById(R.id.etContact_name);
+        etText = findViewById(R.id.etText);
+        et_Contactphone= findViewById(R.id.et_Contactphone);
+
         //initAutoEtSubjects();
     }
 

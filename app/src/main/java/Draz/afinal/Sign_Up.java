@@ -2,14 +2,12 @@ package Draz.afinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import Draz.afinal.data.AppDatabase;
 import Draz.afinal.data.usersTable.MyUser;
@@ -29,12 +27,12 @@ public class Sign_Up extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        btnUpdate = findViewById(R.id.btnUpdate);
+        btnUpdate = findViewById(R.id.btnSave);
         BTNCancel = findViewById(R.id.BTNCancel);
         etname = findViewById(R.id.etname);
         etphone = findViewById(R.id.etphone);
-        etShortTitle = findViewById(R.id.etShortTitle);
-        etPassword = findViewById(R.id.etPassword);
+        etShortTitle = findViewById(R.id.et_Contactphone);
+        etPassword = findViewById(R.id.etText);
         etre_password = findViewById(R.id.etre_password);
 
     }

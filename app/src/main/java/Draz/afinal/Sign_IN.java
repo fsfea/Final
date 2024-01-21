@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 import Draz.afinal.data.AppDatabase;
 import Draz.afinal.data.usersTable.MyUser;
@@ -28,8 +27,8 @@ public class Sign_IN extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        etShortTitle = findViewById(R.id.etShortTitle);
-        etPassword = findViewById(R.id.etPassword);
+        etShortTitle = findViewById(R.id.et_Contactphone);
+        etPassword = findViewById(R.id.etText);
         btnSignUP = findViewById(R.id.btnSignUP);
         btnsignin = findViewById(R.id.btnsignin);
 

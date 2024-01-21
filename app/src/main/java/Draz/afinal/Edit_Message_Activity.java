@@ -25,12 +25,12 @@ public class Edit_Message_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_message);
 
-        btnUpdate = findViewById(R.id.btnUpdate);
+        btnUpdate = findViewById(R.id.btnSave);
         BTNCancel = findViewById(R.id.  BTNCancel);
         skbrImportance = findViewById(R.id.skbrImportance);
         tvImpoertance = findViewById(R.id.tvImpoertance);
-        etShortTitle = findViewById(R.id.etShortTitle);
-        etText = findViewById(R.id.etPassword);
+        etShortTitle = findViewById(R.id.et_Contactphone);
+        etText = findViewById(R.id.etText);
     }
     private void onClickUpdate(View v){
         Intent i = new Intent(Edit_Message_Activity.this, MainActivity.class);
