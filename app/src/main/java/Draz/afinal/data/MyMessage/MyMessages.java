@@ -6,10 +6,10 @@ import androidx.room.PrimaryKey;
 @Entity
 public class MyMessages {
     @PrimaryKey(autoGenerate = true)
-    public long keyid;
-    public String title;
-    public String Text;
-    public String contact_name;
+    public long keyid;// رقم المهمة
+    public String title;//عنوان الرسالة
+    public String Text;//نص الرسالة
+    public String contact_name;// اسماء جهات الاتصال
     public int contact_phone;//رقم الهاتف
     public int y;//السنة
     public int month;//الشهر
