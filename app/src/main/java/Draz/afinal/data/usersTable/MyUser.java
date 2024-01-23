@@ -18,8 +18,8 @@ public class MyUser {
     @ColumnInfo(name = "fullName")// اعطاء صفات جديد للعامود الصفة في الجدول
     public String fullName;
     public String email;// بحالة لم يتم اعطاء اسم للعامود يكون اسم الصفة اسم العامود
-    public String phone;
-    public String passw;
+    public String phone;// رقم الهاتف
+    public String passw;// الرقم السري
 
 
     @Override
