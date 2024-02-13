@@ -19,7 +19,7 @@ import Draz.afinal.data.usersTable.MyuserQuery;
         */
 
 
-@Database(entities = {MyUser.class,  MyMessages.class},version = 6)
+@Database(entities = {MyUser.class,  MyMessages.class},version = 7)
 /**
  * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
  * وتوفر لنا كائن للتعمل مع قاعدة البيانات

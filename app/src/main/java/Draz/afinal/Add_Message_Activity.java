@@ -17,11 +17,11 @@ public class Add_Message_Activity extends AppCompatActivity {
     private Button btnSave;
     private Button BTNCancel;
     private SeekBar skbrImportance;
-    private TextInputLayout etTitle;
-    private TextInputLayout etShortTitle;
-    private TextInputLayout etText;
-    private TextInputLayout etContact_name ;
-    private TextInputLayout et_Contactphone ;
+    private TextInputEditText etTitle;
+    private TextInputEditText etShortTitle;
+    private TextInputEditText etText;
+    private TextInputEditText etContact_name ;
+    private TextInputEditText et_Contactphone ;
 
 
 
@@ -109,7 +109,7 @@ public class Add_Message_Activity extends AppCompatActivity {
 
         String shortTitle=etShortTitle.getText().toString();
         String text=etText.getText().toString();
-        String whichsubj= autoEtSubj.getText().toString();
+      //  String whichsubj= autoEtSubj.getText().toString();
 
 
         int importancee=skbrImportance.getProgress();
@@ -126,10 +126,10 @@ public class Add_Message_Activity extends AppCompatActivity {
             isAllOk=false;
             etText.setError("text is empty");
         }
-        if (whichsubj.length()<1)
+       // if (whichsubj.length()<1)
         {
             isAllOk=false;
-            autoEtSubj.setError("you didn't chose the subject");
+           // autoEtSubj.setError("you didn't chose the subject");
 
         }
 

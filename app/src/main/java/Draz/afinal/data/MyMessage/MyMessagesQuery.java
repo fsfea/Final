@@ -7,9 +7,8 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
-
+@Dao//واجهة استعلامات على جدول المعطيات
 public interface MyMessagesQuery {
-    @Dao//واجهة استعلامات على جدول المعطيات
     public interface MyTasksQuery {
         /**
          * اعادة جميع معطيات جدول المهمات
