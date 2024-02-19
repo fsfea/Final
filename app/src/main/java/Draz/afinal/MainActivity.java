@@ -149,8 +149,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initAllListView() {
         AppDatabase db = AppDatabase.getDB((getApplicationContext()));
-        MyMessagesQuery messagesQuery = db.getAll();
-        List<MyMessages> allMesseages= messagesQueryg.get();
+        MyMessagesQuery messagesQuery = db.getMyMessage();
+        List<MyMessages> allMesseages= messagesQuery.getAllMessages();
         ArrayAdapter<MyMessages> tsksAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
         tsksAdapter.addAll(allMesseages);
         lstvTasks.setAdapter((tsksAdapter));
@@ -185,11 +185,11 @@ public class MainActivity extends AppCompatActivity {
     private void initListBySubjId(long key_id)
     {
         AppDatabase db =AppDatabase.getDB((getApplicationContext()));
-        MyMessagesQuery tasksQuery=db.getMyTaskQuery();
-        List<MyMessages>allTasks=tasksQuery.getMessageBySubjid(key_id);
-        ArrayAdapter<MyMessages>tsksAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
-        tsksAdapter.addAll(allTasks);
-        lstvTasks.setAdapter((tsksAdapter));
+        MyMessagesQuery messagesQuery=db.getMyMessage();
+        List<MyMessages>allMessages=messagesQuery.get(key_id);
+        ArrayAdapter<MyMessages>messagesAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
+        messagesAdapter.addAll(allMessages);
+        lstvTasks.setAdapter((messagesAdapter));
 
     }
 }
