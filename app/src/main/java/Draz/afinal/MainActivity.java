@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
     private void initAllListView() {
         AppDatabase db = AppDatabase.getDB((getApplicationContext()));
         MyMessagesQuery messagesQuery = db.getAll();
-        List<MyMessages> allMesseages= messagesQuery.get();
+        List<MyMessages> allMesseages= messagesQueryg.get();
         ArrayAdapter<MyMessages> tsksAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
         tsksAdapter.addAll(allMesseages);
         lstvTasks.setAdapter((tsksAdapter));
