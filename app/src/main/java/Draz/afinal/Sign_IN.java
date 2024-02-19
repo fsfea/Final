@@ -1,5 +1,6 @@
 package Draz.afinal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -9,20 +10,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import Draz.afinal.data.AppDatabase;
 import Draz.afinal.data.usersTable.MyUser;
 import Draz.afinal.data.usersTable.MyuserQuery;
 
-public class Sign_IN extends AppCompatActivity
-{
+public class Sign_IN extends AppCompatActivity {
     private TextInputEditText etShortTitle;
     private TextInputEditText etPassword;
     private Button btnSignUP;
     private Button btnsignin;
 
-    @SuppressLint ("MissingInflatedId")
+    @SuppressLint ( "MissingInflatedId" )
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +61,7 @@ public class Sign_IN extends AppCompatActivity
             isAllOK = false;
             etPassword.setError("Wrong Password");
         }
-        if (isAllOK)
-        {
+        if (isAllOK) {
             Toast.makeText(this, "All OK", Toast.LENGTH_SHORT).show();
             //بناء قاعدة بيانات وارجاع مؤشر عليها 1
             AppDatabase db = AppDatabase.getDB(getApplicationContext());
@@ -69,18 +72,35 @@ public class Sign_IN extends AppCompatActivity
             if (myUser == null)//هل لا يوجد كائن حسب الايميل والباسورد
             {
                 Toast.makeText(this, "Wrong Email Or Password", Toast.LENGTH_LONG).show();
-            }
-            else
-            {//ان كان هنالك حساب حساب الايميل والباسورد ننتقل الى الشاشة الرئيسية
+            } else {//ان كان هنالك حساب حساب الايميل والباسورد ننتقل الى الشاشة الرئيسية
                 Intent i = new Intent(Sign_IN.this, MainActivity.class);
                 startActivity(i);
 
             }
         }
+        if (isAllOK) {
+            //עצם לביצוע רישום كائن لعملية التسجيل
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            //כניסה לחשבון בעזרת מיל ן סיסמא
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override//התגובה שמתקבל הניסיון הרישום בענן
+                public void onComplete(@NonNull Task<AuthResult> task) {//הפרמטר מכיל מידע מהשרת על תוצאת הבקשה לרישום
+                    if (task.isSuccessful()) {//אם הפעולה הצליחה
+                        Toast.makeText(Sign_IN.this, "Signing in Succeeded", Toast.LENGTH_SHORT).show();
+                        //מעבד למסך הראשי
+                        Intent i = new Intent(Sign_IN.this, MainActivity.class);
+                        startActivity(i);
+                    } else {
+                        Toast.makeText(Sign_IN.this, "Signing in Faild", Toast.LENGTH_SHORT).show();
+                        etShortTitle.setError(task.getException().getMessage());//  הצגת הודעת השגיאה שהקבלה מהענן
+                    }
 
+                }
+            });
+        }
     }
-    public void onClickSign_In(View v)
-    {
-        checkEmailPassw();
+        public void onClickSign_In (View v)
+        {
+            checkEmailPassw();
+        }
     }
-}
