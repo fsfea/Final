@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import Draz.afinal.data.AppDatabase;
 import Draz.afinal.data.usersTable.MyUser;
@@ -108,7 +109,9 @@ public class Sign_Up extends AppCompatActivity
                 public void onComplete(@NonNull Task<AuthResult> task) {//הפרמטר מכיל מידע מהשרת על תוצאת הבקשה לרישום
                     if (task.isSuccessful()) {//אם הפעולה הצליחה
                         Toast.makeText(Sign_Up.this, "Signing up Succeeded", Toast.LENGTH_SHORT).show();
+
                         finish();
+
                     } else {
                         Toast.makeText(Sign_Up.this, "Signing up Faild", Toast.LENGTH_SHORT).show();
                         etShortTitle.setError(task.getException().getMessage());//הצגת הודעת השגיאה שהקבלה מהענן
@@ -124,5 +127,35 @@ public class Sign_Up extends AppCompatActivity
 
 
     }
+    private void SaveUser_FB(String email, String fullname, String phone,String password ){
+        //مؤشر لقاعدة البيانات
+        FirebaseFirestore db= FirebaseFirestore.getInstance();
+        //استخراج الرقم المميز للمستعمل الذي سجل الدخول لاستعماله كاسم لل دوكيومينت
+        String uid= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        //بناء الكائن الذي سيتم حفظه
+        MyUser user=new MyUser();
+        user.setEmail(email);
+        user.setFullName(fullname);
+        user.setPhone(phone);
+        user.setPassw(password);
+        ;
+        //اضافة كائن "لمجموعة" المستعملين ومعالج حدث لفحص   نجاح المطلوب
+        // معالج حدث لفحص هل تم المطلوب من قاعدة البيانات
+        db.collection("MyUsers").document(uid).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+            //داله معالجه الحدث
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // هل تم تنفيذ المطلوب بنجاح
+                if (task.isSuccessful()) {
+                    Toast.makeText(Sign_Up.this, "Succeeded to Add profile", Toast.LENGTH_SHORT).show();
+                    SaveUser_FB(email ,fullname,phone,password);
+                    finish();
 
+                }
+                else {
+                    Toast.makeText(Sign_Up.this,"Failed to Add Profile", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 }
