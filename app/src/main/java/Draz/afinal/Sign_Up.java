@@ -111,7 +111,7 @@ public class Sign_Up extends AppCompatActivity
                         Toast.makeText(Sign_Up.this, "Signing up Succeeded", Toast.LENGTH_SHORT).show();
 
                         finish();
-
+SaveUser_FB(email,name,password,phone);
                     } else {
                         Toast.makeText(Sign_Up.this, "Signing up Faild", Toast.LENGTH_SHORT).show();
                         etShortTitle.setError(task.getException().getMessage());//הצגת הודעת השגיאה שהקבלה מהענן
@@ -127,7 +127,7 @@ public class Sign_Up extends AppCompatActivity
 
 
     }
-    private void SaveUser_FB(String email, String fullname, String phone,String password ){
+    private void SaveUser_FB(String email, String name, String phone,String password ){
         //مؤشر لقاعدة البيانات
         FirebaseFirestore db= FirebaseFirestore.getInstance();
         //استخراج الرقم المميز للمستعمل الذي سجل الدخول لاستعماله كاسم لل دوكيومينت
@@ -135,9 +135,10 @@ public class Sign_Up extends AppCompatActivity
         //بناء الكائن الذي سيتم حفظه
         MyUser user=new MyUser();
         user.setEmail(email);
-        user.setFullName(fullname);
+        user.setFullName(name);
         user.setPhone(phone);
         user.setPassw(password);
+        user.setKeyid(uid);
         ;
         //اضافة كائن "لمجموعة" المستعملين ومعالج حدث لفحص   نجاح المطلوب
         // معالج حدث لفحص هل تم المطلوب من قاعدة البيانات
@@ -148,7 +149,7 @@ public class Sign_Up extends AppCompatActivity
                 // هل تم تنفيذ المطلوب بنجاح
                 if (task.isSuccessful()) {
                     Toast.makeText(Sign_Up.this, "Succeeded to Add profile", Toast.LENGTH_SHORT).show();
-                    SaveUser_FB(email ,fullname,phone,password);
+                    SaveUser_FB(email ,name,phone,password);
                     finish();
 
                 }
