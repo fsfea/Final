@@ -15,8 +15,8 @@ public interface MyMessagesQuery {
          *
          * @return **قائمة من المهمات
          */
-        @Query ( "SELECT * FROM MyMessages" )
-        List<MyMessages> getAllTasks();
+        @Query ( "SELECT * FROM MYMESSAGES" )
+        List<MyMessages> getAllMessages();
 
         /**
          * ادخال مهمات
@@ -41,6 +41,8 @@ public interface MyMessagesQuery {
 
         @Query("DELETE FROM MyMessages WHERE keyid=:id")
         void delTaskById(long id);
+
+
 
 
 

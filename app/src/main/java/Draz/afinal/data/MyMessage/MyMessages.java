@@ -17,7 +17,7 @@ public class MyMessages {
     public double h;//الساعات
     public double m;//الدقائق
     public boolean isCompleted;//هل تمت المهمة
-
+    public long MesjId;//رقم موضوع الرسالة
     public long getKeyid() {
         return keyid;
     }
@@ -104,6 +104,14 @@ public class MyMessages {
 
     public void setCompleted(boolean completed) {
         isCompleted = completed;
+    }
+
+    public long getMesjId() {
+        return MesjId;
+    }
+
+    public void setMesjId(long mesjId) {
+        MesjId = mesjId;
     }
 
     @Override

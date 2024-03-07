@@ -16,6 +16,8 @@ public interface MyuserQuery {
         @Query("SELECT * FROM MyUser")
         List<MyUser> getAll();
 
+
+
         @Query("SELECT * FROM MyUser WHERE keyid IN (:userIds)")
         List<MyUser> loadAllByIds(int[] userIds);
 

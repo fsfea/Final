@@ -111,7 +111,7 @@ public class Sign_Up extends AppCompatActivity
                         Toast.makeText(Sign_Up.this, "Signing up Succeeded", Toast.LENGTH_SHORT).show();
 
                         finish();
-SaveUser_FB(email,name,password,phone);
+                         SaveUser_FB(email,name,password,phone);
                     } else {
                         Toast.makeText(Sign_Up.this, "Signing up Faild", Toast.LENGTH_SHORT).show();
                         etShortTitle.setError(task.getException().getMessage());//הצגת הודעת השגיאה שהקבלה מהענן
@@ -138,7 +138,7 @@ SaveUser_FB(email,name,password,phone);
         user.setFullName(name);
         user.setPhone(phone);
         user.setPassw(password);
-        user.setKeyid(uid);
+        user.setKey(uid);
         ;
         //اضافة كائن "لمجموعة" المستعملين ومعالج حدث لفحص   نجاح المطلوب
         // معالج حدث لفحص هل تم المطلوب من قاعدة البيانات
@@ -149,7 +149,7 @@ SaveUser_FB(email,name,password,phone);
                 // هل تم تنفيذ المطلوب بنجاح
                 if (task.isSuccessful()) {
                     Toast.makeText(Sign_Up.this, "Succeeded to Add profile", Toast.LENGTH_SHORT).show();
-                    SaveUser_FB(email ,name,phone,password);
+                    //SaveUser_FB(email ,name,phone,password);
                     finish();
 
                 }

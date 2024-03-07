@@ -144,23 +144,23 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 
-        initAllListView();
+       // initAllListView();
     }
 
-    private void initAllListView() {
-        AppDatabase db = AppDatabase.getDB((getApplicationContext()));
-        MyMessagesQuery messagesQuery = db.getMyMessage();
-        List<MyMessages> allMesseages= messagesQuery.getAllMessages();
-        ArrayAdapter<MyMessages> tsksAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
-        tsksAdapter.addAll(allMesseages);
-        lstvTasks.setAdapter((tsksAdapter));
-        lstvTasks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long I) {
-                ShowPopUpMenu(view, tsksAdapter.getItem(i));
-            }
-        });
-    }
+//    private void initAllListView() {
+//        AppDatabase db = AppDatabase.getDB((getApplicationContext()));
+//        MyMessagesQuery messagesQuery = db.getMyMessage();
+//        List<MyMessages> allMesseages= messagesQuery.get();
+//        ArrayAdapter<MyMessages> tsksAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
+//        tsksAdapter.addAll(allMesseages);
+//        lstvTasks.setAdapter((tsksAdapter));
+//        lstvTasks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int i, long I) {
+//                ShowPopUpMenu(view, tsksAdapter.getItem(i));
+//            }
+//        });
+   // }
 
     @Override
     protected void onPause() {
@@ -182,14 +182,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d("EZ", "ondestroy");
         Toast.makeText(this, "ondestroy", Toast.LENGTH_SHORT).show();
     }
-    private void initListBySubjId(long key_id)
-    {
-        AppDatabase db =AppDatabase.getDB((getApplicationContext()));
-        MyMessagesQuery messagesQuery=db.getMyMessage();
-        List<MyMessages>allMessages=messagesQuery.get(key_id);
-        ArrayAdapter<MyMessages>messagesAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
-        messagesAdapter.addAll(allMessages);
-        lstvTasks.setAdapter((messagesAdapter));
-
-    }
+//    private void initListBySubjId(long key_id)
+//    {
+//        AppDatabase db =AppDatabase.getDB((getApplicationContext()));
+//        MyMessagesQuery messagesQuery=db.getMyMessage();
+//        List<MyMessages>allMessages=messagesQuery.get(key_id);
+//        ArrayAdapter<MyMessages>messagesAdapter = new ArrayAdapter<MyMessages>(this, android.R.layout.simple_dropdown_item_1line);
+//        messagesAdapter.addAll(allMessages);
+//        lstvTasks.setAdapter((messagesAdapter));
+//
+//    }
 }

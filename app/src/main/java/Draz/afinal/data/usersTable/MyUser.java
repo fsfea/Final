@@ -20,7 +20,15 @@ public class MyUser {
     public String email;// بحالة لم يتم اعطاء اسم للعامود يكون اسم الصفة اسم العامود
     public String phone;// رقم الهاتف
     public String passw;// الرقم السري
+    public String key ;
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     @Override
     public String toString() {
