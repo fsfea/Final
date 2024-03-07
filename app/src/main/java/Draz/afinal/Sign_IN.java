@@ -41,9 +41,10 @@ public class Sign_IN extends AppCompatActivity {
     public void onClickSignUp(View v) {
         Intent i = new Intent(Sign_IN.this, Sign_Up.class);
         startActivity(i);
+        finish();
     }
 
-    private void checkEmailPassw() {
+    private void checkEmailPassw_FB() {
         boolean isAllOK = true;//يحوي نتيجة فحص الحقول ان كانت سليمة
         //استخراج النص من الحقل ايميلة
         String email = etShortTitle.getText().toString();
@@ -101,6 +102,6 @@ public class Sign_IN extends AppCompatActivity {
     }
         public void onClickSign_In (View v)
         {
-            checkEmailPassw();
+            checkEmailPassw_FB();
         }
     }
