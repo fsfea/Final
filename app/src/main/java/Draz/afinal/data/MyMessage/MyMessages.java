@@ -3,6 +3,9 @@ package Draz.afinal.data.MyMessage;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.sql.Time;
+import java.util.Date;
+
 @Entity
 public class MyMessages {
     @PrimaryKey(autoGenerate = true)
@@ -10,13 +13,15 @@ public class MyMessages {
     public String title;//عنوان الرسالة
     public String Text;//نص الرسالة
     public String contact_name;// اسماء جهات الاتصال
-    public int contact_phone;//رقم الهاتف
+    public String  contact_phone;//رقم الهاتف
+    public Date date;
     public int y;//السنة
     public int month;//الشهر
     public int d;//اليوم
+    public Time time;
     public double h;//الساعات
     public double m;//الدقائق
-    public boolean isCompleted;//هل تمت المهمة
+    public boolean isCompleted;//هل تمت الرسالة
     public long MesjId;//رقم موضوع الرسالة
     public long getKeyid() {
         return keyid;
@@ -50,11 +55,11 @@ public class MyMessages {
         this.contact_name = contact_name;
     }
 
-    public int getContact_phone() {
+    public String getContact_phone() {
         return contact_phone;
     }
 
-    public void setContact_phone(int contact_phone) {
+    public void setContact_phone(String contact_phone) {
         this.contact_phone = contact_phone;
     }
 
@@ -98,6 +103,14 @@ public class MyMessages {
         this.m = m;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public boolean isCompleted() {
         return isCompleted;
     }
@@ -112,6 +125,14 @@ public class MyMessages {
 
     public void setMesjId(long mesjId) {
         MesjId = mesjId;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
     }
 
     @Override

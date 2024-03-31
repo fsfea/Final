@@ -62,23 +62,7 @@ public class Sign_IN extends AppCompatActivity {
             isAllOK = false;
             etPassword.setError("Wrong Password");
         }
-        if (isAllOK) {
-            Toast.makeText(this, "All OK", Toast.LENGTH_SHORT).show();
-            //بناء قاعدة بيانات وارجاع مؤشر عليها 1
-            AppDatabase db = AppDatabase.getDB(getApplicationContext());
-            //مؤشر لكائن عمليات الجدول 2
-            MyuserQuery userQuery = (MyuserQuery) db.getMyUserQuery();
-            //ان لم يكن موجود null استدعاء العمليه التي تنفذ الاستعلام والذي يفحص البريد وكلمة المرور ويعيد كائنا ان كان موجود او3
-            MyUser myUser = userQuery.checkEmailPassw(email, password);
-            if (myUser == null)//هل لا يوجد كائن حسب الايميل والباسورد
-            {
-                Toast.makeText(this, "Wrong Email Or Password", Toast.LENGTH_LONG).show();
-            } else {//ان كان هنالك حساب حساب الايميل والباسورد ننتقل الى الشاشة الرئيسية
-                Intent i = new Intent(Sign_IN.this, MainActivity.class);
-                startActivity(i);
 
-            }
-        }
         if (isAllOK) {
             //עצם לביצוע רישום كائن لعملية التسجيل
             FirebaseAuth auth = FirebaseAuth.getInstance();

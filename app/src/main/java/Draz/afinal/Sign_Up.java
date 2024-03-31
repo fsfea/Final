@@ -15,9 +15,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import Draz.afinal.data.AppDatabase;
 import Draz.afinal.data.usersTable.MyUser;
-import Draz.afinal.data.usersTable.MyuserQuery;
 
 public class Sign_Up extends AppCompatActivity
 {
@@ -48,7 +46,7 @@ public class Sign_Up extends AppCompatActivity
         finish();
     }
 
-    private void checkEmailPassw() {
+    private void checkEmailPassw_FB() {
         boolean isAllOK = true;
         String email = etShortTitle.getText().toString();
         String password = etPassword.getText().toString();
@@ -82,23 +80,7 @@ public class Sign_Up extends AppCompatActivity
             etphone.setError("Wrong phone");
         }
 
-        if (isAllOK) {
-            Toast.makeText(this, "All OK", Toast.LENGTH_SHORT).show();
-            AppDatabase db = AppDatabase.getDB(getApplicationContext());
-            MyuserQuery userQuery =db.getMyUserQuery();
-            if (userQuery.checkEmail(email)!= null)
-            {
-                etShortTitle.setError("found email");
-            }
-            else
-            {
-                MyUser myUser=new MyUser();
-                myUser.email=email; myUser.fullName=name;
-                myUser.phone=phone; myUser.passw=password;
-                userQuery.insert(myUser);
-                finish();
-            }
-        }
+
         if(isAllOK)
         {
             //עצם לביצוע רישום كائن لعملية التسجيل
@@ -123,7 +105,7 @@ public class Sign_Up extends AppCompatActivity
 
     public void onClickSignUp (View v)
     {
-        checkEmailPassw();
+        checkEmailPassw_FB();
 
 
     }
