@@ -22,26 +22,6 @@ public class MyUser {
     public String passw;// الرقم السري
     public String key ;
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    @Override
-    public String toString() {
-        return "MyUser{" +
-                "keyid=" + keyid +
-                ", fullName='" + fullName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", passw='" + passw + '\'' +
-                ", keyid=" + keyid +
-                '}';
-    }
-
     public long getKeyid() {
         return keyid;
     }
@@ -80,5 +60,25 @@ public class MyUser {
 
     public void setPassw(String passw) {
         this.passw = passw;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    @Override
+    public String toString() {
+        return "MyUser{" +
+                "keyid=" + keyid +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", passw='" + passw + '\'' +
+                ", key='" + key + '\'' +
+                '}';
     }
 }

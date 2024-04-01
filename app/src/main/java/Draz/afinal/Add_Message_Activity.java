@@ -96,12 +96,12 @@ public class Add_Message_Activity extends AppCompatActivity {
           isAllOk=false;
           et_Contactphone.setError("contact_phone is empty");
       }
-      if (date.length()<0)
+      if (date.length()<1)
       {
           isAllOk=false;
           etDate.setError("date is empty");
       }
-     // if (time.length()<0);
+      if (time.length()<1);
         {
             isAllOk=false;
             etTime.setError("time is empty");
