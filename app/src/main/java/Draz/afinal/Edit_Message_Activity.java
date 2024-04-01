@@ -29,7 +29,7 @@ public class Edit_Message_Activity extends AppCompatActivity {
         BTNCancel = findViewById(R.id.  BTNCancel);
         skbrImportance = findViewById(R.id.skbrImportance);
         tvImpoertance = findViewById(R.id.tvImpoertance);
-        etShortTitle = findViewById(R.id.et_Contactphone);
+        etShortTitle = findViewById(R.id.edTitle);
         etText = findViewById(R.id.etText);
     }
     private void onClickUpdate(View v){

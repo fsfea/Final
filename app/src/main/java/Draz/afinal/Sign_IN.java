@@ -16,9 +16,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import Draz.afinal.data.AppDatabase;
-import Draz.afinal.data.usersTable.MyUser;
-import Draz.afinal.data.usersTable.MyuserQuery;
+//import Draz.afinal.data.AppDatabase;
+
 
 public class Sign_IN extends AppCompatActivity {
     private TextInputEditText etShortTitle;
@@ -31,7 +30,7 @@ public class Sign_IN extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        etShortTitle = findViewById(R.id.et_Contactphone);
+        etShortTitle = findViewById(R.id.edTitle);
         etPassword = findViewById(R.id.etText);
         btnSignUP = findViewById(R.id.btnSignUP);
         btnsignin = findViewById(R.id.btnsignin);

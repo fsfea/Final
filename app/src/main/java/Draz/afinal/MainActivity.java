@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
-import Draz.afinal.data.AppDatabase;
+//import Draz.afinal.data.AppDatabase;
 import Draz.afinal.data.MyMessage.MyMessages;
 import Draz.afinal.data.MyMessage.MyMessagesQuery;
 

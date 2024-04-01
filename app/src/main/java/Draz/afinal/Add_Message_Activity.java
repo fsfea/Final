@@ -2,11 +2,9 @@ package Draz.afinal;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,18 +13,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import Draz.afinal.data.MyMessage.MyMessages;
-import Draz.afinal.data.usersTable.MyUser;
 
 
 public class Add_Message_Activity extends AppCompatActivity {
@@ -52,7 +47,7 @@ public class Add_Message_Activity extends AppCompatActivity {
         etTitle = findViewById(R.id.etTitle);
         etContact_name = findViewById(R.id.etContact_name);
         etText = findViewById(R.id.etText);
-        et_Contactphone= findViewById(R.id.et_Contactphone);
+        et_Contactphone= findViewById(R.id.edTitle);
         etDate = findViewById(R.id.etDate);
          etTime =findViewById(R.id.etTime);
     }
@@ -106,7 +101,7 @@ public class Add_Message_Activity extends AppCompatActivity {
           isAllOk=false;
           etDate.setError("date is empty");
       }
-      if (time.length()<0);
+     // if (time.length()<0);
         {
             isAllOk=false;
             etTime.setError("time is empty");
@@ -136,14 +131,16 @@ public class Add_Message_Activity extends AppCompatActivity {
        messages.setText(text);
         messages.setContact_name(contact_name);
         messages.setContact_phone(contact_phone);
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy",Locale.ENGLISH);
 
 
         Date d = null;
         try {
             d = formatter.parse(date);
             messages.setDate(d);
-          //  messages.setTime(time);
+
+//todo fix time
+           // messages.setTime(time);
             messages.setTitle(title);
         } catch (ParseException e) {
             e.printStackTrace();

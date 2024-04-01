@@ -35,7 +35,7 @@ public class Sign_Up extends AppCompatActivity
         BTNCancel = findViewById(R.id.BTNCancel);
         etname = findViewById(R.id.etname);
         etphone = findViewById(R.id.etphone);
-        etShortTitle = findViewById(R.id.et_Contactphone);
+        etShortTitle = findViewById(R.id.edTitle);
         etPassword = findViewById(R.id.etText);
         etre_password = findViewById(R.id.etre_password);
 
@@ -92,7 +92,6 @@ public class Sign_Up extends AppCompatActivity
                     if (task.isSuccessful()) {//אם הפעולה הצליחה
                         Toast.makeText(Sign_Up.this, "Signing up Succeeded", Toast.LENGTH_SHORT).show();
 
-                        finish();
                          SaveUser_FB(email,name,password,phone);
                     } else {
                         Toast.makeText(Sign_Up.this, "Signing up Faild", Toast.LENGTH_SHORT).show();
@@ -131,7 +130,6 @@ public class Sign_Up extends AppCompatActivity
                 // هل تم تنفيذ المطلوب بنجاح
                 if (task.isSuccessful()) {
                     Toast.makeText(Sign_Up.this, "Succeeded to Add profile", Toast.LENGTH_SHORT).show();
-                    //SaveUser_FB(email ,name,phone,password);
                     finish();
 
                 }
